@@ -33,6 +33,16 @@ body {
     padding: 2%;
 }
 
+.generated-movie-area {
+    background-color: #2e65d3ad;
+    box-sizing: border-box;
+    width: 44%;
+    height: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    padding: 10%;
+}
 
 /* - Buttons */
 
