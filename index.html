@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- font awesome and google fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css"
     <title></title>
@@ -34,8 +32,17 @@
                 <option value="high">High</option>
                 <option value="extreme">Extreme</option>
             </select>
+            <label for="rating">Select Rating: </label>
+            <select name="rating" id="rating">
+                <option value="pg">PG</option>
+                <option value="pg-13">PG-13</option>
+                <option value="r-rating">R-Rated</option>
+                <option value="x-rating">X-Rated</option>
+            </select>
         </div>
-        
+        <button class="btn btn--blue">Generate Movie Suggestion</button>
+
+        </div>   
 
 
     </div>
