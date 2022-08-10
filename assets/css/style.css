@@ -1,0 +1,89 @@
+/* -Global style */
+
+body {
+    background-color: rgb(0, 0, 0);
+    font-family: 'Aclonica', sans-serif;
+    color: #4d1b04;
+    text-align: center;
+}
+
+/* -Heading */
+
+.heading {
+    text-align: center;
+    font-size: 5.5rem;
+}
+
+.logo {
+    height: 100px;
+    padding-right: 15px;
+}
+
+/* -Generator layout */
+
+.horror-game-area {
+    background-color: #86888a;
+    box-sizing: border-box;
+    width: 85%;
+    height: 65vh;
+    max-height: 450px;
+    max-width: 830px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+}
+
+/* - Buttons */
+
+.btn {
+    width: 220px;
+    height: 60px;
+    font-family: 'Alumni Sans Inline One', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: rgb(83, 13, 13);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+
+.btn--blue {
+    border-color: rgb(57, 57, 150);
+    color: rgb(44, 44, 99);
+}
+
+.btn--blue:active,
+.btn--blue:hover {
+    background-color: darkblue;
+    color: white;
+}
+
+
+
+/* --------- Media queries */
+
+@media (max-width: 414px) {
+    .controls-area {
+        width: 100%;
+    }
+
+
+    .heading {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .horror-game-area {
+        height: 70vh;
+    }
+
+    .controls-area {
+        width: 75%;
+        margin: 10px auto;
+    }
+
+
+}
