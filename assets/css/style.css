@@ -26,22 +26,25 @@ body {
     box-sizing: border-box;
     width: 85%;
     height: 65vh;
-    max-height: 450px;
+    max-height: 250px;
     max-width: 830px;
     margin-left: auto;
     margin-right: auto;
-    padding: 1%;
+    padding: 2%;
 }
+
 
 /* - Buttons */
 
+
 .btn {
-    width: 220px;
+    width: 320px;
     height: 60px;
-    font-family: 'Alumni Sans Inline One', sans-serif;
+    font-family: 'Aclonica', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1.2px;
     color: rgb(83, 13, 13);
+    margin-top: 80px;
 }
 
 .btn:focus {
