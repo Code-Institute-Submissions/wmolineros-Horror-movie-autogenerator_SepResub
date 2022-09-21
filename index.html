@@ -9,47 +9,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css"
-    <title></title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Horror Movie Suggester Game</title>
 </head>
-
 <body>
-    <h1 class="heading">
-        <img class="logo" src="assets/images/Ghostface-logo.PNG" alt="logo">Horror Movie Generator
-    </h1>
-
-    <div class="horror-game-area">
-        <div class="controls-area">
-            <label for="season">Select Season: </label>
-            <select name="season" id="season">
-                <option value="autumn">Autumn</option>
-                <option value="summer">Summer</option>
-                <option value="winter">Winter</option>
-                <option value="spring">Spring</option>
-            </select>
-            <label for="scare-level">Select Scare Level: </label>
-            <select name="scare-level" id="scare-level">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-            </select>
-            <label for="rating">Select Rating: </label>
-            <select name="rating" id="rating">
-                <option value="pg">PG</option>
-                <option value="pg-13">PG-13</option>
-                <option value="r-rating">R-Rated</option>
-            </select>
+    <nav>
+        <ul class="navigation">
+            <li id="home" class="home-btn">Home Sweet Home</li>
+            <li id="rules" class="rules-btn">Rules of the game</li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Home page details -->
+        <div class="home-details">
+            <div id="home-info" class="initial-content">
+                <h1>Horror Movie Selecter Game</h1>
+                <button id="start-button" class="home-page-btn btn">Start Game</button>
+                <br>
+                <button id="previous-suggestions" class="previous-suggestions-btn btn">Previous Suggestions</button>
+            </div>
         </div>
-        <button class="btn btn--blue">Generate Movie Suggestion</button>
+        <!-- Rules of the game -->
+        <div id="rules-of-game" class="detailed-instructions">
+            <div class="instructions">
+                <span id="details"></span>
+                <h2 class="rules-of-game">Rules of the game</h2>
+                <ul>
+                    <li>Select the "Start Game" button to begin the game</li>
+                </ul>
 
-        </div>   
+            </div>
+        </div>
 
 
-    </div>
 
-    <div class="generated-movie-area">
-         <p class="output" id="movieSuggestion">Movie Suggestion<span id="movie"> X<span></p>              
-    </div>
+    </main>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -2,9 +2,12 @@
 
 body {
     background-color: rgb(0, 0, 0);
+    height:100%;
+    max-width: 100%;
+    background: url(../images/woods.PNG);
+    background-size: cover;
+    background-position: center;
     font-family: 'Aclonica', sans-serif;
-    color: #4d1b04;
-    text-align: center;
 }
 
 /* -Heading */

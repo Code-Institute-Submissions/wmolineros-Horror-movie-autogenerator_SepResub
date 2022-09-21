@@ -13,11 +13,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     for (let button of buttons) {
         button.addEventListener("click", function() {
-            if (((select.options[select.selectedIndex].value) === "autumn") && ((select.options[select.selectedIndex].value) === "low") && ((select.options[select.selectedIndex].value) === "r-rating")) {
-                alert('Doctor sleep!') ;
+            if 
             } else {
                 let gameType = this.getAttribute("data-type");
                 alert('You clicked ${gameType}');
             }
 
 /* Function to determine selections */
+
+let movieSuggestion = true; 
+
+if (season === 'autumn') {
+    if (documen)
+}
