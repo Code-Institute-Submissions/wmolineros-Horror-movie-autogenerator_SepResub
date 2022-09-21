@@ -1,17 +1,23 @@
-// Wait for the DOM to finish loading before running
-// Get the button elements and add event listeners to them
+/* parameter selections */
+
+const season = document.getElementById('season');
+const scareLevel = document.getElementById('scare-level');
+const rating = document.getElementById('rating')
+const movieSuggestion = document.getElementsByClassName('movieSuggestion')
+const value = select.options[select.selectedIndex].value;
+
 
 document.addEventListener("DOMContentLoaded", function() {
-    let buttons = document.getElementsByTagName("button");
+
+    const buttons = document.getElementsByTagName("button");
 
     for (let button of buttons) {
         button.addEventListener("click", function() {
-            if (this.getAttribute("data-type") === "Generate Movie Suggestion") {
-                alert("You clicked Generate Movie Suggestion!");
+            if (((select.options[select.selectedIndex].value) === "autumn") && ((select.options[select.selectedIndex].value) === "low") && ((select.options[select.selectedIndex].value) === "r-rating")) {
+                alert('Doctor sleep!') ;
             } else {
                 let gameType = this.getAttribute("data-type");
                 alert('You clicked ${gameType}');
             }
-        })
-    }
-})
+
+/* Function to determine selections */

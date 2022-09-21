@@ -32,14 +32,12 @@
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
-                <option value="extreme">Extreme</option>
             </select>
             <label for="rating">Select Rating: </label>
             <select name="rating" id="rating">
                 <option value="pg">PG</option>
                 <option value="pg-13">PG-13</option>
                 <option value="r-rating">R-Rated</option>
-                <option value="x-rating">X-Rated</option>
             </select>
         </div>
         <button class="btn btn--blue">Generate Movie Suggestion</button>
@@ -50,8 +48,7 @@
     </div>
 
     <div class="generated-movie-area">
-         <p class="movies">Movie Suggestion<span id="movie"> X<span></p>   
-         <p class="movies">Rating<span id="movie"> Y<span></p>                   
+         <p class="output" id="movieSuggestion">Movie Suggestion<span id="movie"> X<span></p>              
     </div>
     <script src="assets/js/script.js"></script>
 </body>
