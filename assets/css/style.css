@@ -12,94 +12,9 @@ body {
 
 /* -Heading */
 
-.heading {
-    text-align: center;
-    font-size: 5.5rem;
-}
-
-.logo {
-    height: 100px;
-    padding-right: 15px;
-}
-
-/* -Generator layout */
-
-.horror-game-area {
-    background-color: #86888a;
-    box-sizing: border-box;
-    width: 85%;
-    height: 65vh;
-    max-height: 250px;
-    max-width: 830px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2%;
-}
-
-.generated-movie-area {
-    background-color: #2e65d3ad;
-    box-sizing: border-box;
-    width: 44%;
-    height: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
-    padding: 10%;
-}
-
-/* - Buttons */
-
-
-.btn {
-    width: 320px;
-    height: 60px;
-    font-family: 'Aclonica', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: rgb(83, 13, 13);
-    margin-top: 80px;
-}
-
-.btn:focus {
-    outline: none;
+p {
+    color:rgb(255, 255, 255);
+    font-size: 2rem;
 }
 
 
-.btn--blue {
-    border-color: rgb(57, 57, 150);
-    color: rgb(44, 44, 99);
-}
-
-.btn--blue:active,
-.btn--blue:hover {
-    background-color: darkblue;
-    color: white;
-}
-
-
-
-/* --------- Media queries */
-
-@media (max-width: 414px) {
-    .controls-area {
-        width: 100%;
-    }
-
-
-    .heading {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 320px) {
-    .horror-game-area {
-        height: 70vh;
-    }
-
-    .controls-area {
-        width: 75%;
-        margin: 10px auto;
-    }
-
-
-}

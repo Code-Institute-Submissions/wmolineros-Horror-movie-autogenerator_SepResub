@@ -1,28 +1,9 @@
-/* parameter selections */
+/* Overall assessment containers */
 
-const season = document.getElementById('season');
-const scareLevel = document.getElementById('scare-level');
-const rating = document.getElementById('rating')
-const movieSuggestion = document.getElementsByClassName('movieSuggestion')
-const value = select.options[select.selectedIndex].value;
+const homeDetails = document.querySelector('.home-details');
+const assessmentContainer = document.querySelector('.assessment-container');
+const questionContainer = document.getElementById('question-container');
+const assessmentEnd = document.getElementById('assessment-end');
+const formDetails = document.querySelector('.form-details')
+const previousRecordContainer = document.getElementById('previous-record-container');
 
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    const buttons = document.getElementsByTagName("button");
-
-    for (let button of buttons) {
-        button.addEventListener("click", function() {
-            if 
-            } else {
-                let gameType = this.getAttribute("data-type");
-                alert('You clicked ${gameType}');
-            }
-
-/* Function to determine selections */
-
-let movieSuggestion = true; 
-
-if (season === 'autumn') {
-    if (documen)
-}
