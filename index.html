@@ -23,7 +23,8 @@
         <!-- Home page details -->
         <div class="home-details">
             <div id="home-info" class="initial-content">
-                <h1>Horror Movie Selecter Game</h1>
+                <h1>Horror Movie Assessor</h1>
+                <p>Want to find the best horro movie to watch for your time of year? From low to high scare level, this game has got you covered.</p>
                 <button id="start-button" class="home-page-btn btn">Start Game</button>
                 <br>
                 <button id="previous-suggestions" class="previous-suggestions-btn btn">Previous Suggestions</button>
@@ -36,14 +37,92 @@
                 <h2 class="rules-of-game">Rules of the game</h2>
                 <ul>
                     <li>Select the "Start Game" button to begin the game</li>
+                    <li>You will need to make a selection from 10 questions that will lead you to a couple of suggestions.</li>
+                    <li>You can make your selection simply by clicking from the options available.</li>
+                    <li>There are no right or wrong answers, this game is totally curated for your needs.</li>
+                    <li>At the end, you will have a couple of suggestions that fit your criteria the best.</li>
+                    <li>Now to close the rules and continue with the assessment, select "x" or go to "Home Sweet Home".</li>
                 </ul>
 
             </div>
         </div>
-
-
-
+        <!-- Quiz Container -->
+        <div class="top-container hidden">
+            <div id="question-container">
+                <div id="main-section">
+                    <p id="questionNumber" class="main-section-text">Question Number</p>
+                    <div id="mainSectionArea">
+                        <div id="fullMainSectionArea"></div>
+                    </div>
+                    <div>
+                        <p class="top-main-section">Previously Recorded Answers</p>
+                        <h3 class="top-main-section" id="previously-recorded-answers">
+                            0
+                        </h3>
+                        <div id="timer">00:00:00</div>
+                    </div>
+                </div>
+                <div class="question-area">
+                    <h2 id="question">Question</h2>
+                    <div><i></i></div>
+                    <div></div>
+                </div>
+                <!-- number for each option that is provided during the assessment -->
+                <div class="selection-holder">
+                    <button class="selection-text answer-btn" data-number="0">Selection 1</button>
+                    <button class="selection-text answer-btn" data-number="1">Selection 2</button>
+                    <button class="selection-text answer-btn" data-number="2">Selection 3</button>
+                    <button class="selection-text answer-btn" data-number="3">Selection 4</button>
+                </div>
+                <div></div>
+                <div>
+                    <button id="begin-again" class="begin-again-btn btn">Begin again</button>
+                    <button id="next-one" class="next-one-btn btn">Next One</button>
+                    <button id="to-the-end-btn" class="to-the-end-btn btn hidden">To the End</button>
+                </div>
+            </div>
+            <!-- Assessment Container -->
+            <div id="assessment-end" class="hide">
+                <h2 class="assessment-complete">Assessment complete!</h2>
+                <div id="assessment-details">Your suggestions: </div>
+                <div id="time-end">00:00:00</div>
+                <form class="form-details">
+                    <label for="list-of-suggestions" id="enter-name">Enter your name to show further results.</label>
+                    <input type="text" name="name" id="name-details" placeholder="Add your name">
+                    <br>
+                    <button class="button" id="show-additional-details" type="submit" disabled>Save</button>
+                </form>
+                <h3 class="form-submission hidden">Details saved and further results provided</h3>
+                <button id="begin-again" class="button">Begin assessment again</button>
+                <br>
+                <button id="review-questions" class="button">Review questions</button>
+                <div id="table" class="hide">
+                    <p class="additional-suggestions">View the questions asked below in addition to additional suggestions for horror flicks.</p>
+                    <table id="question-and-suggestions">
+                        <thead>
+                            <tr>
+                                <th>Questions</th>
+                                <th>Additional suggestions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="additional-suggestions-table"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Previously recorded suggestions page-->
+        <div class="previous-record-container hidden">
+            <div id="previous-record" class="center-details">
+                <h3 class="previously-recorded-details">Previously Recorded Suggestions</h3>
+                <p class="no-details-recorded hidden">There are no previously recorded suggestions.</p>
+                <button id="go-home-btn" class="no-details-recorded btn hidden">Begin Quiz</button>
+                <ol id="suggestions-list"></ol>
+                <br>
+                <p class="overall-message">All details recorded are directly from your own system and no other.</p>
+            </div>
+        </div>
     </main>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
