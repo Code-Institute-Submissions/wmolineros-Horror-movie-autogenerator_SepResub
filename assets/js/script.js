@@ -55,6 +55,36 @@ const suggestionsRecordedList = JSON.parse(localStorage.getItem('suggestions-lis
 const formSubmission = document.querySelector('form-submission');
 const noDetailsRecorded = document.querySelector('no-details-recorded');
 
+/* Mutable variable base values */
+let momentaryQuestion = {};
+let answerAccepted = true;
+let score = 0;
+let randomQuestion;
+let assessmentQuestion = [];
+let questionCount = 0;
+let questionAvailble = [];
+
+/* Fixed value variable */
+const VALUE_POINT = 1;
+const QUESTION_TOTAL = 4;
+const MAXIMUM_HIGH_SCORE = 5;
+
+/* Javascript on-page load */
+onload():
+
+/* start game function */
+function onload() {
+    startButton.addEventListener('click', e => {
+        homeDetails.classList.add('hidden');
+        assessmentContainer.classList.remove(hidden);
+        beginGame();
+        beginTimer();
+    })
+
+    /* high score event listeners */
+    
+}
+
 
 
 
