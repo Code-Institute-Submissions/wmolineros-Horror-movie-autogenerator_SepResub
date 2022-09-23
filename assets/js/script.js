@@ -32,3 +32,30 @@ const selectionHolder = document.getElementById('selection-holder');
 const questionNumber = document.getElementById('questionNumber');
 const previouslyRecordedAnswers = document.getElementById('previously-recorded-answers');
 const fullMainSection = document.getElementById('fullMainSectionArea');
+
+/* Timer details */
+
+const timer = document.getElementById('timer');
+const endTimer = document.getElementById('time-end');
+let createdTime;
+let timeInterval;
+
+/* End of the quiz and additional suggestions */
+
+const assessmentDetails = document.getElementById('assessment-details');
+const table = document.querySelector('#table');
+const summaryAndSuggestions = document.getElementById('summary-and-additional-suggestions');
+
+/* Form detials */
+
+const nameDetails = document.getElementById('name-details');
+const additionalDetails = document.getElementById('show-additional-details');
+const mostRecentSuggestion = localStorage.getItem('mostRecentSuggestion');
+
+
+
+
+
+
+
+
