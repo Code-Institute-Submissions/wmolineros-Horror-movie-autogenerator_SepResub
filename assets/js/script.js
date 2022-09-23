@@ -51,6 +51,13 @@ const summaryAndSuggestions = document.getElementById('summary-and-additional-su
 const nameDetails = document.getElementById('name-details');
 const additionalDetails = document.getElementById('show-additional-details');
 const mostRecentSuggestion = localStorage.getItem('mostRecentSuggestion');
+const suggestionsRecordedList = JSON.parse(localStorage.getItem('suggestions-list')) || [];;
+const formSubmission = document.querySelector('form-submission');
+const noDetailsRecorded = document.querySelector('no-details-recorded');
+
+
+
+
 
 
 
