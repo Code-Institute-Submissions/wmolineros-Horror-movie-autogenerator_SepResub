@@ -21,5 +21,14 @@ const previousSuggestionButton = document.getElementById('previous-suggestions')
 const beginAgain = document.getElementById('begin-again'); 
 const nextOne = document.getElementById('next-one');
 const toTheEnd = document.getElementById('to-the-end-btn');
-const reviewQuestions = document.getElementById('review-questions')
+const reviewQuestions = document.getElementById('review-questions');
+const goHomeButton = document.getElementById('go-home-btn');
+const beginAssessmentAgain = document.getElementsByName('begin-assessment-again')
 
+/* Assessmnet Page *//
+
+const questionSection = document.getElementById('question-section');
+const selectionHolder = document.getElementById('selection-holder');
+const questionNumber = document.getElementById('questionNumber');
+const previouslyRecordedAnswers = document.getElementById('previously-recorded-answers');
+const fullMainSection = document.getElementById('fullMainSectionArea');
