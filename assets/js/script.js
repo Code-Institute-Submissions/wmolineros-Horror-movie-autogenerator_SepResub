@@ -36,9 +36,9 @@ const fullMainSection = document.getElementById('fullMainSectionArea');
 /* Timer details */
 
 const timer = document.getElementById('timer');
-const endTimer = document.getElementById('time-end');
+const timerEnd = document.getElementById('time-end');
 let createdTime;
-let timeInterval;
+let timeBreak;
 
 /* End of the quiz and additional suggestions */
 
@@ -46,11 +46,14 @@ const scoreDetails = document.getElementById('score-details');
 const table = document.querySelector('#table');
 const summaryAndSuggestions = document.getElementById('summary-and-additional-suggestions');
 
-/* Form detials */
+/* High scores and form detials */
 
 const nameDetails = document.getElementById('name-details');
+const buttonSaveScore = document.getElementById('btn-save-score');
+const recentScore = localStorage.getItem('recentScore');
+const recentTime = localStorage.getItem('recentTime')
 const highScoreDetails = document.getElementById('high-score-details');
-const recentScore = localStorage.getItem('RecentScore');
+/* either high score or empty score return */
 const scoreRecordedList = JSON.parse(localStorage.getItem('score-list')) || [];;
 const formSubmission = document.querySelector('form-submission');
 const noScoreRecorded = document.querySelector('no-score-recorded');
@@ -158,6 +161,35 @@ function beginTimer() {
     }, 1000);
 }
 
+function timerCounter(begin) {
+    /* current time */
+    let timeNow = Date.now();
+    /* Difference in seconds between current and time of commencement */
+    var epsilon = Math.floor((now - begin) / 1000);
+    /* Time formatted as HH:MM:SS */
+    var hour = Math.floor(epsilon / 3600);
+    var minute = Math.floor((epsilon - hour * 3600) / 60);
+    var seconds = epsilon - (hour * 3600 + minute * 60);
+    if (hour < 10)
+        hour = "0" + hour;
+    if (minute < 10)
+        minute = "0" + minute;
+    if (seconds < 10)
+       seconds = "0" + seconds;
+    /* timer updated to seconds passed */
+    timer.innerHTML = hour + ":" + minute + ":" + seconds;
+    /* Event listener to stop the timer and return details to the end time */
+    toTheEnd.addEventListener('click', e => {
+        timerEnd.innerText = "The time you completed the quiz in is: " + hour + ":" + minute + ":" + seconds;
+        endTimer();
+        createdTime = hour + ":" + minute + ":" + seconds;
+        /* The final time is saved into local storage */
+        localStorage.setItem('recentTime', createdTime);
+        recentTime = createdTime;
+    })
+
+function 
+}
 
 
 
