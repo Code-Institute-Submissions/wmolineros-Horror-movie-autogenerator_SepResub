@@ -140,8 +140,23 @@ function shuffle(assembly) {
     return assembly
 }
 
+/* Includes the first 10 randomised questions to the list called "assessmentQuestions" */
+function assessmentQuestionSelector(randomQueries) {
+    for (let i = 0; i < 10; i++) {
+        assessmentQuestion.push(randomQueries[i]);
+    }
+    return assessmentQuestion;
+}
 
-
+/* timer function */
+function beginTimer() {
+    /* current time */
+    var begin = Date.now();
+    /* time break to 1 second */
+    timeBreak = setBreak(function() {
+        timerCounter(begin);
+    }, 1000);
+}
 
 
 
