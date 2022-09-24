@@ -5,13 +5,13 @@ const assessmentContainer = document.querySelector('.assessment-container');
 const questionContainer = document.getElementById('question-container');
 const assessmentEnd = document.getElementById('assessment-end');
 const formDetails = document.querySelector('.form-details');
-const previousRecordContainer = document.getElementById('previous-record-container');
+const highScore = document.getElementById('high-score');
 
 /* Rules of the game */
 
-const rules = document.getElementById('rules');
+const rules = document.getElementById('rules'); 
 const rulesOfTheGame = document.getElementById('rules-of-game');
-const details = document.getElementById('details');
+const closeInstructions = document.getElementById('close-instructions');
 
 /* Connecting to Buttons */
 
@@ -42,18 +42,18 @@ let timeInterval;
 
 /* End of the quiz and additional suggestions */
 
-const assessmentDetails = document.getElementById('assessment-details');
+const scoreDetails = document.getElementById('score-details');
 const table = document.querySelector('#table');
 const summaryAndSuggestions = document.getElementById('summary-and-additional-suggestions');
 
 /* Form detials */
 
 const nameDetails = document.getElementById('name-details');
-const additionalDetails = document.getElementById('show-additional-details');
-const mostRecentSuggestion = localStorage.getItem('mostRecentSuggestion');
-const suggestionsRecordedList = JSON.parse(localStorage.getItem('suggestions-list')) || [];;
+const highScoreDetails = document.getElementById('high-score-details');
+const recentScore = localStorage.getItem('RecentScore');
+const scoreRecordedList = JSON.parse(localStorage.getItem('score-list')) || [];;
 const formSubmission = document.querySelector('form-submission');
-const noDetailsRecorded = document.querySelector('no-details-recorded');
+const noScoreRecorded = document.querySelector('no-score-recorded');
 
 /* Mutable variable base values */
 let momentaryQuestion = {};
@@ -76,13 +76,44 @@ onload():
 function onload() {
     startButton.addEventListener('click', e => {
         homeDetails.classList.add('hidden');
-        assessmentContainer.classList.remove(hidden);
+        assessmentContainer.classList.remove('hidden');
         beginGame();
         beginTimer();
     })
 
     /* high score event listeners */
-    
+    reviewQuestions.addEventListener('click', e => {
+        homeDetails.classList.add("hidden");
+        formDetails.classList.remove("hidden");
+        getScore();
+    })
+
+    /* Home button event listener */
+    homeBtn.addEventListener('click', e => {
+        reload.home.location()
+    })
+
+    /* Rules button event listener */
+    rules.addEventListener('click', e => {
+        rulesOfTheGame.classList.remove("hidden");
+    })
+
+    /* Closing Rules container */
+    closeInstructions.addEventListener('click', e => {
+        rulesOfTheGame.classList.add("hidden");
+    })
+    window.addEventListener('click', e => {
+        if (e.target == rulesOfTheGame) {
+            rulesOfTheGame.classList.add("hidden")
+        }
+    });
+}
+
+/* Function for begining the game */
+function beginGame() {
+    /* adding the counters to start from 0 and going down question list */
+    question
+
 }
 
 

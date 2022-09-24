@@ -33,7 +33,7 @@
         <!-- Rules of the game -->
         <div id="rules-of-game" class="detailed-instructions">
             <div class="instructions">
-                <span id="details"></span>
+                <span id="close-instructions">&times;</span>
                 <h2 class="rules-of-game">Rules of the game</h2>
                 <ul>
                     <li>Select the "Start Game" button to begin the game</li>
@@ -84,10 +84,10 @@
             <!-- End of Assessment Container -->
             <div id="assessment-end" class="hide">
                 <h2 class="assessment-complete">Assessment complete!</h2>
-                <div id="assessment-details">Your suggestions: </div>
+                <div id="score-details">Your score: </div>
                 <div id="time-end">00:00:00</div>
                 <form class="form-details">
-                    <label for="list-of-suggestions" id="enter-name">Enter your name to show further results.</label>
+                    <label for="name" id="enter-name">Enter your name to show further results.</label>
                     <input type="text" name="name" id="name-details" placeholder="Add your name">
                     <br>
                     <button class="button" id="show-additional-details" type="submit" disabled>Save</button>
@@ -111,12 +111,12 @@
             </div>
         </div>
         <!-- Previously recorded suggestions page-->
-        <div class="previous-record-container hidden">
-            <div id="previous-record" class="center-details">
-                <h3 class="previously-recorded-details">Previously Recorded Suggestions</h3>
-                <p class="no-details-recorded hidden">There are no previously recorded suggestions.</p>
-                <button id="go-home-btn" class="no-details-recorded btn hidden">Home</button>
-                <ol id="suggestions-list"></ol>
+        <div class="high-score hidden">
+            <div id="high-score" class="center-details">
+                <h3 class="high-score-details">Previously Recorded Suggestions</h3>
+                <p class="no-score-recorded hidden">There are no previously recorded high scores.</p>
+                <button id="go-home-btn" class="no-score-recorded btn hidden">Home</button>
+                <ol id="score-list"></ol>
                 <br>
                 <p class="overall-message">All details recorded are directly from your own system and no other.</p>
             </div>
