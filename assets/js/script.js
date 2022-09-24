@@ -25,7 +25,7 @@ const reviewQuestions = document.getElementById('review-questions');
 const goHomeButton = document.getElementById('go-home-btn');
 const beginAssessmentAgain = document.getElementsByName('begin-assessment-again')
 
-/* Assessmnet Page *//
+/* Assessment Page *//
 
 const questionSection = document.getElementById('question-section');
 const selectionHolder = document.getElementById('selection-holder');
@@ -319,16 +319,23 @@ function finishgame() {
     scoreDetails.innerText = `You scored: ${score}`;
     /* table appears upon user click */
     previousScores.addEventListener('click', e => {
-        table
-    })
-
+        table.classList.add('add-flex');
+        table.classList.remove('hidden');
+        previousScores.classList.add('hidden');
+    });
+    /* sends user to the start page when "begin again" is clicked */
+    beginAgain.addEventListener('click', e => {
+        window.location.reload();
+    });
+    /* insert table function is called */
+    tableInsert(assessmentQuestion);
 }
 
 
 function highScoreSaved() {
 
 /* Assigning variables that are locally saved to an object */
-     const
+     const table
 }
 
 
