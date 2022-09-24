@@ -33,6 +33,8 @@ const questionNumber = document.getElementById('questionNumber');
 const previouslyRecordedAnswers = document.getElementById('previously-recorded-answers');
 const fullMainSection = document.getElementById('fullMainSectionArea');
 
+
+
 /* Timer details */
 
 const timer = document.getElementById('timer');
@@ -123,7 +125,7 @@ function beginGame() {
     /* selects 10 random questions for the quiz */
     assessmentQuestion = assessmentQuestionSelector(randomQuestion);
     /* call the function to retrieve a new question */
-    retreiveNewQuestion();
+    retrieveNewQuestion();
 }
 
 /* Original question list randomised in shuffle function */
@@ -197,8 +199,67 @@ function scoreTaker() {
     /* Add +1 to the question counter */
     questionCount++;
     /* Show question number x of y */
-    questionSection.innerHTML = `Question <br>`
+    questionSection.innerHTML = `Question <br>${questionCount} of ${QUESTION_TOTAL}`;
+    /* show  as the percentage of all total questions */
+    questionNumber.style.width = `${(questionCount/QUESTION_TOTAL) * 100}%`;
+    if (questionCount >= QUESTION_TOTAL) {
+        toTheEnd.addEventListener('click', e => {
+            localStorage.setItem('recentScore', score);
+            recentScore = score;
+            // end the quiz
+            finishgame()
+        });
+    }
 }
+
+function retrieveNewQuestion() {
+    /* Call the scoreTaker function to update the score and progress */
+    scoreTaker();
+    /* Acquire the question from the list of questions using the index number */
+    momentaryQuestion = assessmentQuestion[questionCount - 1];
+    /* show the text for the next question */
+    questionSection.innerText = momentaryQuestion.question; 
+    /* shuffle the answers */
+    momentaryQuestion.answers = shuffle(momentaryQuestion.anwers);
+    /* show options for the answers */
+    selectionHolder.forEach(selection => {
+        const number = option.dataset.number;
+        option.innerText = momentaryQuestion.answers[number];
+    });
+    answerAccepted = true;
+}
+/* review the answer that is chosen */
+selectionHolder.forEach(selection => {
+    /* Even listener to pick up on the user making a selection */
+    selection.addEventListener('click', e => {
+        if (!answerAccepted) return;
+        /* Answers no longer accepted by the user when false */
+        answerAccepted = false;
+        const optionSelected = e.target;
+        /* collect number (1-4) for the selected answer */
+        /* make sure the user answers correctly */
+        let applyToClass = optionSelected.innerText == momentaryQuestion.correct_answer ? 'correct' : 'incorrect';
+
+        /* if the selection made is correct, there is an increase in the score function */
+        if(applyToClass === 'correct') {
+           scoreIncrease(VALUE_POINT);
+           optionSelected.innerText += " Correct!";
+           momentaryQuestion.correct = true;
+        }
+        /* if the selection made is incorrectly, the correct answer will appear in green */
+        if(applyToClass === 'incorrect') {
+            optionSelected.innerText += " Incorrect!";
+            for (let i = 0; i < 4; i++) {
+                if (selectionHolder[i].innerText === momentaryQuestion.correct_answer) {
+                    selectionHolder[i].classList.add('correct');
+                    selectionHolder[i].innerText += " correct";
+                }
+            }
+        }
+        /* 
+    })
+}) 
+
 
 
 
