@@ -17,7 +17,7 @@ const closeInstructions = document.getElementById('close-instructions');
 
 const startButton = document.getElementById('start-button');
 const homeBtn = document.getElementById('home');
-const previousSuggestionButton = document.getElementById('previous-suggestions');
+const previousScores = document.getElementById('previous-scores');
 const beginAgain = document.getElementById('begin-again'); 
 const nextOne = document.getElementById('next-one');
 const toTheEnd = document.getElementById('to-the-end-btn');
@@ -30,7 +30,7 @@ const beginAssessmentAgain = document.getElementsByName('begin-assessment-again'
 const questionSection = document.getElementById('question-section');
 const selectionHolder = document.getElementById('selection-holder');
 const questionNumber = document.getElementById('questionNumber');
-const previouslyRecordedAnswers = document.getElementById('previously-recorded-answers');
+const savedScore = document.getElementById('saved-score');
 const fullMainSection = document.getElementById('fullMainSectionArea');
 
 
@@ -48,7 +48,7 @@ const scoreDetails = document.getElementById('score-details');
 const table = document.querySelector('#table');
 const summaryAndSuggestions = document.getElementById('summary-and-additional-suggestions');
 
-/* High scores and form detials */
+/* High scores and form details */
 
 const nameDetails = document.getElementById('name-details');
 const buttonSaveScore = document.getElementById('btn-save-score');
@@ -95,7 +95,7 @@ function onload() {
 
     /* Home button event listener */
     homeBtn.addEventListener('click', e => {
-        reload.home.location()
+        window.location.reload()
     })
 
     /* Rules button event listener */
@@ -256,10 +256,80 @@ selectionHolder.forEach(selection => {
                 }
             }
         }
-        /* 
-    })
-}) 
+        /* if the user is not on the last question, then the 'next' button will appear */
+        if (questionCount != QUESTION_TOTAL) {
+            nextOne.classList.remove("hidden");
+        }
+        /* if one question is remaining from the list, the 'to the End' button is hidden and the 'next one' button is shown */
+        if (questionCount >= QUESTION_TOTAL) {
+            toTheEnd.classList.remove('hidden');
+            nextOne.classList.add('hidden')
+        }
+    });
+});
 
+/* The next button is hidden until the answer is chosen */
+function nextButtonHidden() {
+    nextOne.classList.add('hidden');
+}
+
+/* event listener for the 'begin-again' button */
+beginAgain.addEventListener('click', e => {
+    window.location.reload();
+})
+/* event listener for the 'next-one' button */
+nextOne.addEventListener('click', e => {
+    newQuestion();
+    nextButtonHidden();
+});
+
+/* function for next question */
+function newQuestion() {
+    for (let i = 0; i < 4; i++) {
+        selectionHolder[i].classList.remove('correct');
+        selectionHolder[i].classList.remove('incorrect');
+    }
+    retrieveNewQuestion();
+}
+
+/* if the score is correct, increase by 1 point */
+function scoreIncrease(num) {
+    score += num;
+    savedScore.innerText = score;
+}
+
+/* HTML table rows for each question */
+function tableInsert(questionAsked) {
+    let htmlTableSummary = '';
+    for (let question of questionsAsked) {
+        htmlTableSummary += `
+            <tr class ="${question-section.correct}">
+                <td>${question-section.question}</td>
+            </tr>
+        `;
+        htmlTableSummary.innerHTML = htmlTableSummary;
+    }
+}
+
+function finishgame() {
+    /* shows the end page instead of the quiz page */
+    questionContainer.classList.add('hidden');
+    assessmentEnd.classList.remove('hidden');
+    /* final score is updated */
+    scoreDetails.innerText = `You scored: ${score}`;
+    /* table appears upon user click */
+    previousScores.addEventListener('click', e => {
+        table
+    })
+
+}
+
+
+function highScoreSaved() {
+
+/* Assigning variables that are locally saved to an object */
+     const
+}
 
 
 
