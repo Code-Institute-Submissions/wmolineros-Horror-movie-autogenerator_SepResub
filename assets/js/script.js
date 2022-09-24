@@ -187,8 +187,17 @@ function timerCounter(begin) {
         localStorage.setItem('recentTime', createdTime);
         recentTime = createdTime;
     })
+}
 
-function 
+function endTimer() {
+    clearBreak(timeBreak)
+}
+
+function scoreTaker() {
+    /* Add +1 to the question counter */
+    questionCount++;
+    /* Show question number x of y */
+    questionSection.innerHTML = `Question <br>`
 }
 
 
