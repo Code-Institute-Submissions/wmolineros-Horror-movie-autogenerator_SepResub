@@ -112,8 +112,32 @@ function onload() {
 /* Function for begining the game */
 function beginGame() {
     /* adding the counters to start from 0 and going down question list */
-    question
+    questionCount = 0;
+    score = 0;
+    questionAvailble = [...questions];
+    /* allows the function to shuffle the questions */
+    randomQuestion = shuffle(questionAvailble);
+    /* selects 10 random questions for the quiz */
+    assessmentQuestion = assessmentQuestionSelector(randomQuestion);
+    /* call the function to retrieve a new question */
+    retreiveNewQuestion();
+}
 
+/* Original question list randomised in shuffle function */
+function shuffle(assembly) {
+    let currentPosition = assembly.length,
+        randomPosition;
+    // Remaining elements to shuff.
+    while (currentPosition != 0) {
+        // A random element is selected.
+        randomPosition = Math.floor(Math.random() * currentPosition);
+        currentPosition--;
+        // Swap with the current element.
+        [assembly[currentPosition], assembly[randomPosition]] = [
+            assembly[randomPosition], assembly[currentPosition]
+        ];
+    }
+    return assembly
 }
 
 
