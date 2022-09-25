@@ -1,4 +1,4 @@
-[Horror Movie Quiz] 
+[Horror Movie Quiz](https://wmolineros.github.io/Horror-movie-autogenerator/)
 by Wanda Molineros
 
 <p>This quiz tests a users knowledge on their horror movie trivia. A lot of Horror movie quizzes out there still only talk about the classics but this quiz incorporates some of the classics and the new releases; including new horror shows. The quiz essentially asks the user to pick the correct answer out of four options. Then the final is recorded and the highest score is selected as each user completes their assessment.
@@ -56,4 +56,4 @@ The German Idiom Quiz helped me generate and understand the code by adding funci
 4. Select "main" branch. 
 5. Select "save" to deploy the published site details. 
 
-[Horror Movie Quiz]() was created by Wanda Molineros. This page was last edited on 25 September 2022, at 09:50 (GMT).
+[Horror Movie Quiz](https://wmolineros.github.io/Horror-movie-autogenerator/) was created by Wanda Molineros. This page was last edited on 25 September 2022, at 09:50 (GMT).
