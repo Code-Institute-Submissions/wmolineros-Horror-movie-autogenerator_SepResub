@@ -33,8 +33,6 @@ const questionNumber = document.getElementById('questionNumber');
 const savedScore = document.getElementById('saved-score');
 const fullMainSection = document.getElementById('fullMainSectionArea');
 
-
-
 /* Timer details */
 
 const timer = document.getElementById('timer');
@@ -220,7 +218,7 @@ function retrieveNewQuestion() {
     /* show the text for the next question */
     questionSection.innerText = momentaryQuestion.question; 
     /* shuffle the answers */
-    momentaryQuestion.answers = shuffle(momentaryQuestion.anwers);
+    momentaryQuestion.answers = shuffle(momentaryQuestion.answers);
     /* show options for the answers */
     selectionHolder.forEach(selection => {
         const number = option.dataset.number;
@@ -238,7 +236,7 @@ selectionHolder.forEach(selection => {
         const optionSelected = e.target;
         /* collect number (1-4) for the selected answer */
         /* make sure the user answers correctly */
-        let applyToClass = optionSelected.innerText == momentaryQuestion.correct_answer ? 'correct' : 'incorrect';
+        let applyToClass = optionSelected.innerText == momentaryQuestion.correct_answers ? 'correct' : 'incorrect';
 
         /* if the selection made is correct, there is an increase in the score function */
         if(applyToClass === 'correct') {
@@ -250,7 +248,7 @@ selectionHolder.forEach(selection => {
         if(applyToClass === 'incorrect') {
             optionSelected.innerText += " Incorrect!";
             for (let i = 0; i < 4; i++) {
-                if (selectionHolder[i].innerText === momentaryQuestion.correct_answer) {
+                if (selectionHolder[i].innerText === momentaryQuestion.correct_answers) {
                     selectionHolder[i].classList.add('correct');
                     selectionHolder[i].innerText += " correct";
                 }
@@ -305,6 +303,7 @@ function tableInsert(questionAsked) {
         htmlTableSummary += `
             <tr class ="${question-section.correct}">
                 <td>${question-section.question}</td>
+                <td>${quesetion.correct_answers}</td>
             </tr>
         `;
         htmlTableSummary.innerHTML = htmlTableSummary;
@@ -352,6 +351,31 @@ function highScoreSaved() {
     localStorage.setItem('scoreRecordedList', JSON.stringify(scoreRecordedList));
 }
 
+function getScore() {
+    highScoreDetails.innerHTML = highScoreDetails.map(score => {
+        return `<li class="high-score"> ${score.name} - ${score.score} - ${score.time} </li>`;
+    }).join('');
+
+    if (scoreRecordedList == false){
+        noScoreRecorded.classList.remove('hidden');
+        goHomeButton.classList.remove('hidden');
+    }
+    goHomeButton.addEventListener('click', e => {
+        highScore.classList.add('hidden');
+        assessmentContainer.classList.remove('hidden');
+        beginGame();
+        beginTimer();
+    })
+}
+
+nameDetails.addEventListener('keyup', () => {
+    buttonSaveScore.disabled = !username.value;
+});
+buttonSaveScore.addEventListener('click', e => {
+    formDetails.classList.add('hidden');
+    formSubmission.classList.remove('hidden');
+    highScoreSaved();
+});
 
 
 
