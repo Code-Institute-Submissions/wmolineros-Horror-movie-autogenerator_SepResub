@@ -334,8 +334,22 @@ function finishgame() {
 
 function highScoreSaved() {
 
-/* Assigning variables that are locally saved to an object */
-     const table
+/* Assigning locally saved variables to an object */
+     const score = {
+        score: recentScore, 
+        username: nameDetails.value,
+        time: recentTime
+     };
+    /* add score to end of the array */
+    scoreRecordedList.push(score);
+    /* arranges the array */
+    scoreRecordedList.sort((a, b) => {
+        return b.score - a.score;
+    });
+    /* retrieves first 5 scores */
+    scoreRecordedList.splice(MAXIMUM_HIGH_SCORE);
+    /* highscore from scorerecordedlist saved in local storage */
+    localStorage.setItem('scoreRecordedList', JSON.stringify(scoreRecordedList));
 }
 
 
